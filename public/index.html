@@ -1,0 +1,96 @@
+<!doctype html>
+<html class="no-js" ng-app="meanMapApp">
+    <head>
+    <meta charset="utf-8">
+    <title>Mean Map App Attack</title>
+    <meta name="description" content="An example demonstrating Google Map integration with MEAN Apps">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- CSS -->
+    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css"/>
+    <link rel="stylesheet" href="style.css"/>
+    <!-- Holder JS -->
+    <script src="../bower_components/holderjs/holder.js"></script>
+    <!-- Google Maps API -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHe7LvgpMdn3WNy54R7dCyMwssfYUB5Xc"></script>
+    <!-- Modernizr -->
+    <script src="../bower_components/modernizr/bin/modernizr"></script>
+    <!-- JS Source -->
+    <script src="../bower_components/jquery/jquery.js"></script>
+    <script src="../bower_components/angular/angular.js"></script>
+    <script src="../bower_components/angular-route/angular-route.js"></script>
+    <script src="../bower_components/angularjs-geolocation/dist/angularjs-geolocation.min.js"></script>
+    </head>
+    <body ng-controller="addCtrl">
+    <div class="container">
+        <div class="header">
+            <ul class="nav nav-pills pulls-right">
+                <li active><a href="">Join</a></li>
+                <li disabled><a href="">find</a></li>
+            </ul>
+            <h3 class="text-muted">The Mean App Map Attack</h3>
+        </div>
+        <div class="row content">
+            <!--Google Map-->
+        </div>
+            <div class="col-md-5">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                    <h2class="panel-title text-center">Join<span class="glyphicon glyphicon-map-marker"></span></h2>
+                    </div>
+        <div class="panel-body">
+                    <form name="addForm" novalidate>
+           <div class="form-group">
+            <label for="username">Username <span class="badge">All fields required</span></label>
+               <input type="text" class="form-control" id="username" placeholder="OldandGold" ng-model="formData.username" required>
+            </div>
+                        <label class="radio control-label">Gender</label>
+                        <div class="radio" required>
+        <label>
+            <input type="radio" name="optionsRadio" id="radiomale" value="male" ng-model="formData.gender">
+            Male
+                            </label>
+                        </div>
+                        <div class="radio" required>
+                            <label>
+                            <input type="radio" name="optionsRadios" id ="radiofemale" value="Female" ng-model="formData.gender">
+                                Female
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                            <input type="radio" name="optionsRadios" id="radioother" value="What's it to ya?" ng-model="formData.gender">
+                                What's it to Ya?
+                            </label>
+                        </div>
+                        <div class="form-group">
+                        <label for="age">Age</label>
+                            <input type="number" class="form-control" id="age" placeholder="72" ng-model="formData.age" required>
+                             </div>
+                        <div class="form-group">
+                        <label for="language">Prefered Language</label>
+                        <input type="text" class="form-control" id="language" placeholder="Fortran" ng-model="formData.favlang" required>
+                        </div>
+                        <div class="form-group">
+                        <label for ="latitude">latitude</label>
+                            <input type="text" class="form-control" id="latitude" value="39.500" ng-model="formData.latitude" readonly>
+                        </div>
+                        <div class="form-group">
+                        <label for="longitude">Longitude</label>
+                            <input type="text" class="form-control" id="longitude" value="-98.350" ng-model="formData.longitude" readonly> 
+                        </div>
+                        <div class="form-group">
+                        <label for="verified">Verified Location<span><button class="btn btn-default btn-xs"><span class="glyphicon glyphicon-refresh"></span></button></span></label>
+                            <input type="text" class="form-control" id="verified" placeholder="Nope" ng-model="fomrData.htmlverified" readonly>
+                        </div>
+                        <button type="submit" class="btn btn-danger btn-block" ng-click="createUser()" ng-disabled="addForm.$invalid">Submit</button>
+            </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <script src="js/app.js"></script>
+        <script src="js/addCtrl.js"></script>
+        <script src="js/gservice.js"></script>
+    </body>
+</html>
